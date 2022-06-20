@@ -14,10 +14,11 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
       console.log(selectedDates[0]);
-      if (selectedDates < options.defaultDate) {}
+      console.log(selectedDates < options.defaultDate);
+      if (selectedDates < options.defaultDate) {Notiflix.Notify.warning("Please choose a date in the future");}
     },
   };
-  console.log(options.defaultDate);
+ 
 const startBtnRef = document.querySelector('button[data-start]');
 
 const inputRef = document.querySelector('input[type="text"]');
