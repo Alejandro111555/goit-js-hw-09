@@ -2,15 +2,17 @@
 // Такой таймер может использоваться в блогах и интернет-магазинах, 
 // страницах регистрации событий, во время технического обслуживания и т. д.
 
-// Описан в документации
-import flatpickr from "flatpickr";
-// Дополнительный импорт стилей
-import "flatpickr/dist/flatpickr.min.css";
-
-import Notiflix from 'notiflix';
+ // Описан в документации
+ import flatpickr from "flatpickr";
+ // Дополнительный импорт стилей
+ import "flatpickr/dist/flatpickr.min.css";
+ 
+ import Notiflix from 'notiflix';
 
 const startBtnRef = document.querySelector('button[data-start]');
 startBtnRef.setAttribute('disabled', true);
+
+startBtnRef.addEventListener('click', startTimer);
 
 const inputRef = document.querySelector('input[type="text"]');
 const options = {
@@ -26,9 +28,12 @@ const options = {
     },
   };
  
-
-
 flatpickr(inputRef, options);
+
+ function startTimer (event) {
+setInterval()
+
+ }
 
 function convertMs(ms) {
     // Number of milliseconds per unit of time
