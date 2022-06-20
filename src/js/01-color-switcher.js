@@ -12,7 +12,7 @@ function getRandomHexColor() {
   stopBtn.setAttribute('disabled', true);
   
   startBtn.addEventListener('click', () => {
-    color = setInterval(() => {
+    colo = setInterval(() => {
       setRandomHexColor();
     }, 1000);
     startBtn.setAttribute('disabled', true);
