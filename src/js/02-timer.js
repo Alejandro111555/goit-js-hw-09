@@ -9,6 +9,10 @@ import "flatpickr/dist/flatpickr.min.css";
 
 import Notiflix from 'notiflix';
 
+const startBtnRef = document.querySelector('button[data-start]');
+startBtnRef.setAttribute('disabled', true);
+
+const inputRef = document.querySelector('input[type="text"]');
 const options = {
     enableTime: true,
     time_24hr: true,
@@ -16,17 +20,13 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
       console.log(selectedDates[0]);
-      console.log(selectedDates[0].getTime());
       if (selectedDates[0].getTime() < options.defaultDate.getTime()) 
       {Notiflix.Notify.warning("Please choose a date in the future");}
       else {startBtnRef.removeAttribute('disabled');}
     },
   };
  
-const startBtnRef = document.querySelector('button[data-start]');
-startBtnRef.setAttribute('disabled', true);
 
-const inputRef = document.querySelector('input[type="text"]');
 
 flatpickr(inputRef, options);
 
