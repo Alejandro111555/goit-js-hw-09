@@ -28,6 +28,7 @@ const options = {
     },
   };
   console.log('options',options.defaultDate.getTime());
+  console.log('за ',selectedDates[0]);
 flatpickr(inputRef, options);
 
  function startTimer (event) {
