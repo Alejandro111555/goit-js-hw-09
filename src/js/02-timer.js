@@ -31,8 +31,7 @@ const options = {
 flatpickr(inputRef, options);
 
  function startTimer (event) {
-  const ms = selectedDates[0].getTime() - options.defaultDate.getTime();
-  console.log(ms);
+ 
 setInterval()
 
  }
