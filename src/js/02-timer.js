@@ -46,7 +46,7 @@ const options = {
 flatpickr(refs.input, options);
 
 function countDown() {
-  let intervalId = null;
+  const intervalId = null;
   intervalId = setInterval(startTimer, 1000);
   function startTimer() {
     const currentTime = Date.now();
