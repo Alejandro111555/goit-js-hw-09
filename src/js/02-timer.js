@@ -27,10 +27,12 @@ const options = {
       else {startBtnRef.removeAttribute('disabled');}
     },
   };
- 
+  console.log(options.defaultDate.getTime());
 flatpickr(inputRef, options);
 
  function startTimer (event) {
+  const ms = selectedDates[0].getTime() - options.defaultDate.getTime();
+  console.log(ms);
 setInterval()
 
  }
