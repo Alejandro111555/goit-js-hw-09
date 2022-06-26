@@ -10,7 +10,7 @@ function getRandomHexColor() {
   const stopBtn = document.querySelector('button[data-stop]');
   
   stopBtn.setAttribute('disabled', true);
-  
+  const colo = null;
   startBtn.addEventListener('click', () => {
     colo = setInterval(() => {
       setRandomHexColor();
