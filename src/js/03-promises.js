@@ -1,20 +1,37 @@
-import Notiflix from 'notiflix';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 btnSubmitRef = document.querySelector('button');
-console.log(btnSubmitRef);
 
-btnSubmitRef.addEventListener('click', trane);
+const formEl = document.querySelector('.form');
+formEl.addEventListener('submit',onSubmitForm);
 
-function trane (event) {
-  Notiflix.Notify.success('Sol lucet omnibus');
-}
+
+
 
 function createPromise(position, delay) {
-  const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
+  return new Promise((resolve,reject) => {
+    const shouldResolve = Math.random() > 0.3;
+    setTimeout(() => { if (shouldResolve) {
+      resolve({position, delay});
+    } else {
+      reject({position, delay});
+    }
+  },delay)
+})
 }
 
+function onSubmitForm(event) {
+  event.preventDefault();
+const {delay,step,amount} = event.target.elements;
+let delayStep = Number(delay.value);
+  for (let i = 0;i<= amount.value;i++) {
+  createPromise(i,500).then(({ position, delay }) => {
+    Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+  })
+  .catch(({ position, delay }) => {
+    Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+  });
+  delayStep += Number(delay.value);
+  };
+  formEl.reset();
+}
