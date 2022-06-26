@@ -25,6 +25,7 @@ refs.input.addEventListener('click', flatpickr);
 refs.start.addEventListener('click', countDown);
 
 let stopTime = null;
+let intervalId = null;
 
 const options = {
   enableTime: true,
@@ -46,7 +47,7 @@ const options = {
 flatpickr(refs.input, options);
 
 function countDown() {
-  let intervalId = null;
+  
   intervalId = setInterval(startTimer, 1000);
   function startTimer() {
     const currentTime = Date.now();
@@ -56,7 +57,7 @@ function countDown() {
     if (deltaTime > 0) {
       const timeUpDate = convertMs(deltaTime);
       updateClock(timeUpDate);
-      clearInterval(intervalId);
+      
     }
   }
 }
