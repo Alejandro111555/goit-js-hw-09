@@ -19,14 +19,14 @@ function onSubmitForm(event) {
   event.preventDefault();
 const {delay,step,amount} = event.target.elements;
 let delayStep = Number(delay.value);
-  for (let i = 0;i<= amount.value;i++) {
+  for (let i = 0;i< amount.value;i+=1) {
   createPromise(i,delayStep).then(({ position, delay }) => {
     Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
     Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
   });
-  delayStep += Number(delay.value);
+  delayStep += Number(step.value);
   };
   formEl.reset();
 }
