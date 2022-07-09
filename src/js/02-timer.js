@@ -2,9 +2,8 @@
 // Такой таймер может использоваться в блогах и интернет-магазинах, 
 // страницах регистрации событий, во время технического обслуживания и т. д.
 
- // Описан в документации
+
  import flatpickr from "flatpickr";
- // Дополнительный импорт стилей
  import "flatpickr/dist/flatpickr.min.css";
  
  import Notiflix from 'notiflix';

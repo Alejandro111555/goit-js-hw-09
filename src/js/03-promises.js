@@ -1,3 +1,6 @@
+// Напиши скрипт, который при сабмите формы вызывает функцию createPromise(position, delay) столько раз,сколько ввели в поле amount.
+// При каждом вызове передай ей номер создаваемого промиса (position) и задержку учитывая введенную пользователем первую задержку (delay) и шаг (step).
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const formEl = document.querySelector('.form');
